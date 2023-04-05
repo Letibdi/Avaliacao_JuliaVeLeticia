@@ -1,7 +1,4 @@
 <html>
-  <head>
-    <title>Login da empresa</title>
-  </head>
   <body>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
@@ -13,7 +10,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Clientes</a>
+          <a class="nav-link active" aria-current="page" href="UsuarioList.php">Clientes</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Camisetas</a>
@@ -33,12 +30,37 @@
     </div>
   </div>
 </nav>
-        <div class="container">
+<?php
+include '../Util.php';
+if(!empty($_POST)){
+    Util::logar($_POST);
+}elseif(!empty($_GET['sair'])){
+    Util::logoff();
+}
+
+?>
+<html>
+  <head>
+    <title>PHP Test</title>
+  </head>
+  <body>
+    <div class="container">
   <div class="row align-items-start">
     <div class="col">
-       <a href="./view/login.php">Logar funcionário</a><br>
+     	<form action="login.php" method="post">
+			<?php
+				if(isset($_GET["msg"])){
+					echo "<b style='color:red;'>Login ou senha errado, por favor tente novamente!</b><br>";
+				}
+			?>
+			<label>Login</label><br>
+			<input type="text" name="login" placeholder="usuario"><br>
+			<label>Senha</label><br>
+			<input type="password" name="senha" placeholder="******"><br>
+			<input type="submit" value="Logar"/>
+		</form>
     </div>
   </div>
 </div>
-   
-	</body>
+  </body>
+</html>
