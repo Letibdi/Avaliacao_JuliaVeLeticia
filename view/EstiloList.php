@@ -14,6 +14,7 @@ include "../controller/EstiloController.php";
     $load = $estilo->carregar();
 
   }
+    
    //var_dump($load);
   // exit;
 ?>
@@ -64,7 +65,7 @@ include "../controller/EstiloController.php";
             <div class="col-2">
             <select name="campo" class="form-select">
               <option value="cor">Cor</option>
-              <option value="tecido">tecido</option>
+              <option value="tecido">Tecido</option>
               <option value="quantidade">Quantidade</option>
     </select>
       </div>

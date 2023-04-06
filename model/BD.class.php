@@ -7,8 +7,8 @@ class BD {
 	private $usuario = "root";
 	private $senha = "";
 	private $db_charset = "utf8";	 
-
-	public function conn()
+  
+  public function conn()
   {
     $conn = "mysql:host=$this->host;dbname=$this->dbname;port=$this->port";
 
