@@ -29,8 +29,9 @@ include "../controller/UsuarioController.php";
   
   </head>
   <body>
-  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <nav class="navbar navbar-expand-lg bg-secondary">
   <div class="container-fluid">
+    <img src="/Logo/logo.png"  width="70" height="70">
     <a class="navbar-brand" href="#">Guns n' Malha</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -38,19 +39,15 @@ include "../controller/UsuarioController.php";
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="UsuarioList.php">Cliente</a>
+          <a class="nav-link active" aria-current="page" href="#">Clientes</a>
         </li>
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link" href="#">Camiseta</a>
+          <a class="nav-link active" aria-current="page" href="EstiloList.php">Estilo</a>
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Categoria
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Banda</a></li>
-            <li><a class="dropdown-item" href="#">Série</a></li>
-          </ul>
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="DisponivelList.php">Camisetas disponíveis</a>
         </li>
       </ul>
     </div>
@@ -60,7 +57,7 @@ include "../controller/UsuarioController.php";
 
   <div class="container">
     <div class="row">
-      <h3>Listagem Usuario</h3>
+      <h4><br>Listagem Usuario</h4>
         <form action="UsuarioList.php" method="post">
           
           <div class="row">
@@ -75,12 +72,13 @@ include "../controller/UsuarioController.php";
       <input type="text" class="form-control" placeholder="Pesquisar" name="valor"/>
     </div>
       <div class="col-6">
-          <button class="btn btn-success" type="submit">
+          <button class="btn btn-outline-success" type="submit">
           <i class="fa-solid fa-magnifying-glass"></i> Buscar</button>
-          <a class="btn btn-primary"href="UsuarioForm.php"><i class="fa-solid fa-plus"></i> Cadastrar</a>
+          <a class="btn btn-outline-primary" href="UsuarioForm.php">
+          <i class="fa-solid fa-plus"></i> Cadastrar</a>
       </div>
 
-          
+      
       </form>
       <table class="table table-striped table-hover">
       <thead>
@@ -89,6 +87,7 @@ include "../controller/UsuarioController.php";
                 <th scope="col">Nome</th>
                 <th scope="col">Telefone</th>
                 <th scope="col">CPF</th>
+                
             </tr>
     </thead>  <tbody>
 
@@ -108,9 +107,10 @@ include "../controller/UsuarioController.php";
               </tbody>
         </table>
       </div>
+      <a href="main.php" class="btn btn-outline-secondary" role="button">Voltar</a>
     </div>
   
-
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
   </body>
 </html>

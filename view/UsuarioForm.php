@@ -31,8 +31,9 @@ $usuario = new UsuarioController();
   
   </head>
   <body>
-  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <nav class="navbar navbar-expand-lg bg-secondary">
   <div class="container-fluid">
+    <img src="/Logo/logo.png"  width="70" height="70">
     <a class="navbar-brand" href="#">Guns n' Malha</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -40,28 +41,23 @@ $usuario = new UsuarioController();
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="UsuarioList.php">Cliente</a>
+          <a class="nav-link active" aria-current="page" href="UsuarioList.php">Clientes</a>
         </li>
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link" href="#">Camiseta</a>
+          <a class="nav-link active" aria-current="page" href="EstiloList.php">Estilo</a>
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Categoria
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Banda</a></li>
-            <li><a class="dropdown-item" href="#">Série</a></li>
-          </ul>
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="DisponivelList.php">Camisetas disponíveis</a>
         </li>
       </ul>
-    
     </div>
   </div>
 </nav>
 
     <div class="container">
-      <h3>Cadastrar</h3>
+      <h4><br>Cadastrar</h4>
         <form action="UsuarioForm.php" method="POST">
             <input type="hidden" name="id" value="<?php echo !empty($data->id) ? $data->id : "" ?>"/><br>
             <div class="col-3">
@@ -76,8 +72,8 @@ $usuario = new UsuarioController();
           <label class="form-label">CPF</label><br>
             <input type="text" class="form-control" name="cpf" value="<?php echo !empty($data->cpf) ? $data->cpf : "" ?>">
         </div>
-            <input type="submit" class="btn btn-success" value="Salvar"/>
-            <a href="UsuarioList.php" class="btn btn-primary">Voltar</a>
+            <br><input type="submit" class="btn btn-outline-success" role="button" value="Salvar"/>
+            <a href="UsuarioList.php" class="btn btn-outline-primary" role="button">Voltar</a>
         </form>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
 	</body>

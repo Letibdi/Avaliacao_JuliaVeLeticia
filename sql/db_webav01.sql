@@ -15,23 +15,42 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 
--- Copiando estrutura do banco de dados para db_webav01
-CREATE DATABASE IF NOT EXISTS `db_webav01` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_bin */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `db_webav01`;
+-- Copiando estrutura do banco de dados para avweb2
+CREATE DATABASE IF NOT EXISTS `avweb2` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_bin */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `avweb2`;
 
--- Copiando estrutura para tabela db_webav01.usuario
+-- Copiando estrutura para tabela avweb2.disponivel
+CREATE TABLE IF NOT EXISTS `disponivel` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `modelo` varchar(100) COLLATE utf8mb4_bin NOT NULL DEFAULT '0',
+  `quantidade` int NOT NULL DEFAULT '0',
+  `valor` float NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+
+-- Copiando dados para a tabela avweb2.disponivel: ~0 rows (aproximadamente)
+
+-- Copiando estrutura para tabela avweb2.estilo
+CREATE TABLE IF NOT EXISTS `estilo` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `cor` varchar(50) COLLATE utf8mb4_bin NOT NULL DEFAULT '',
+  `tecido` varchar(50) COLLATE utf8mb4_bin NOT NULL DEFAULT '',
+  `quantidade` int NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+
+-- Copiando dados para a tabela avweb2.estilo: ~0 rows (aproximadamente)
+
+-- Copiando estrutura para tabela avweb2.usuario
 CREATE TABLE IF NOT EXISTS `usuario` (
   `id` int NOT NULL AUTO_INCREMENT,
   `nome` varchar(100) COLLATE utf8mb4_bin NOT NULL DEFAULT '0',
-  `telefone` varchar(20) COLLATE utf8mb4_bin NOT NULL DEFAULT '0',
-  `cpf` varchar(20) COLLATE utf8mb4_bin NOT NULL DEFAULT '0',
+  `telefone` varchar(50) COLLATE utf8mb4_bin NOT NULL DEFAULT '0',
+  `cpf` varchar(50) COLLATE utf8mb4_bin NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
--- Copiando dados para a tabela db_webav01.usuario: ~0 rows (aproximadamente)
-INSERT INTO `usuario` (`id`, `nome`, `telefone`, `cpf`) VALUES
-	(3, 'lele', '123', '654'),
-	(4, 'leti', '4987987', '549879847');
+-- Copiando dados para a tabela avweb2.usuario: ~0 rows (aproximadamente)
 
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
